@@ -1,0 +1,85 @@
+﻿/* ============================================================================
+   COSMIC EXPLORER - COMPONENT SPECIFIC HUD STYLES
+   ============================================================================ */
+
+/* 3D Canvas Containers */
+.canvas-viewport {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 140px);
+  min-height: 520px;
+  background: radial-gradient(circle at center, #070d1e 0%, #030611 100%);
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+/* Floating Overlay HUDs */
+.floating-hud {
+  position: absolute;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+/* Button Variants */
+.cyber-btn {
+  background: rgba(0, 243, 255, 0.1);
+  border: 1px solid rgba(0, 243, 255, 0.4);
+  color: #00f3ff;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.cyber-btn:hover {
+  background: rgba(0, 243, 255, 0.25);
+  border-color: #00f3ff;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.cyber-btn-emerald {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+
+.cyber-btn-emerald:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+.cyber-btn-purple {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+
+.cyber-btn-purple:hover {
+  background: rgba(168, 85, 247, 0.25);
+  border-color: #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+/* Active Filter / Preset States */
+.active-filter, .active-layer, .active-preset, .active-cat {
+  background: rgba(0, 243, 255, 0.25) !important;
+  border-color: #00f3ff !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.35);
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(16px);
+}
+
+/* Radar Scan Line Animation */
+.radar-grid {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 243, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 243, 255, 0.04) 1px, transparent 1px);
+}

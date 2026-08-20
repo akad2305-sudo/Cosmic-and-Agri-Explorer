@@ -1,0 +1,161 @@
+﻿/* ============================================================================
+   COSMIC EXPLORER - MAIN SCI-FI THEME & CYBERPUNK HUD STYLES
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+:root {
+  --bg-space: #030712;
+  --panel-bg: rgba(10, 16, 31, 0.72);
+  --panel-border: rgba(0, 243, 255, 0.25);
+  --cyan-glow: #00f3ff;
+  --purple-glow: #a855f7;
+  --amber-glow: #f59e0b;
+  --emerald-glow: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-space);
+  color: #f1f5f9;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Typography Overrides */
+.font-orbitron { font-family: 'Orbitron', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+.font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+
+/* Sci-Fi Glassmorphic Panels */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-interactive:hover {
+  border-color: rgba(0, 243, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+/* Neon Text & Glowing Borders */
+.neon-text-cyan {
+  color: #00f3ff;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.6), 0 0 25px rgba(0, 243, 255, 0.3);
+}
+
+.neon-text-purple {
+  color: #c084fc;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+.neon-text-emerald {
+  color: #34d399;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+}
+
+.neon-border-cyan {
+  border-color: #00f3ff;
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.35);
+}
+
+/* Active Navigation Tabs */
+.nav-tab-btn {
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.nav-tab-btn:hover {
+  color: #00f3ff;
+  background: rgba(0, 243, 255, 0.08);
+}
+
+.nav-tab-btn.active-nav-tab {
+  color: #00f3ff;
+  background: rgba(0, 243, 255, 0.15);
+  border-color: rgba(0, 243, 255, 0.6);
+  box-shadow: inset 0 0 15px rgba(0, 243, 255, 0.2), 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.nav-tab-btn.active-nav-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: #00f3ff;
+  box-shadow: 0 0 8px #00f3ff;
+}
+
+/* Custom Cyber Range Sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00f3ff;
+  box-shadow: 0 0 10px #00f3ff;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 243, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 243, 255, 0.6);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
